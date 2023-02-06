@@ -1,9 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Staatliches&display=swap');
 
 $font-color: #e2e1de;
-$link-color: #9e5400;
-$link-after: #946e43;
+$link-color: #9c5d14;
 $main-background: #000000;
+$activeinput-background: #3b2c1a;
+$invalid-input: #ec513c;
+$valid-input: #9fe76f;
+
+@keyframes invalidborder {
+    0%   {border: solid 1px $invalid-input;}
+    25%  {border: solid 1px $invalid-input;}
+    75%  {border: solid 1px $link-color;}
+    100% {border: solid 1px $link-color;}
+  }
+ 
+  @keyframes validborder {
+    0%   {border: solid 1px $valid-input;}
+    25%  {border: solid 1px $valid-input;}
+    75%  {border: solid 1px $link-color;}
+    100% {border: solid 1px $link-color;}
+  }
 
 
 * {
@@ -71,10 +87,6 @@ a {
     cursor: pointer;
 }
 
-a:visited  {
-    color: $link-after;
-}
-
 .div-github {
     display: flex;
     justify-content: center;
@@ -139,7 +151,7 @@ legend {
 .div-input {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 6px;
     justify-content: left;
     width: 50%;
     font-size: 14px;
@@ -172,7 +184,7 @@ input {
     font-family: inherit;
     border: none;
     color: $font-color;
-    background-color: #9e5400;
+    background-color: $link-color;
     border-radius: 4px;
 }
 
@@ -184,4 +196,41 @@ input {
 
 .p-submit {
     font-size: 18px;
+}
+
+input {
+    padding: 0 8px;
+    background-color: $main-background;
+    color: $font-color;
+    border: 1px solid $link-color;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+
+input:focus {
+    border: 1px solid $font-color;
+    background-color: $activeinput-background;
+}
+
+input:invalid { 
+    animation-name: invalidborder;
+    animation-duration: 3s;
+    color: $invalid-input;
+    box-shadow: none;
+}
+
+input:valid {
+    animation-name: validborder;
+    animation-duration: 3s;
+    box-shadow: none;
+}
+
+.span-required {
+    color: $invalid-input;
+}
+
+.p-required {
+    margin-top: -90px;
+    margin-bottom: 90px;
 }

@@ -1,4 +1,60 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Staatliches&display=swap");
+@-webkit-keyframes invalidborder {
+  0% {
+    border: solid 1px #ec513c;
+  }
+  25% {
+    border: solid 1px #ec513c;
+  }
+  75% {
+    border: solid 1px #9c5d14;
+  }
+  100% {
+    border: solid 1px #9c5d14;
+  }
+}
+@keyframes invalidborder {
+  0% {
+    border: solid 1px #ec513c;
+  }
+  25% {
+    border: solid 1px #ec513c;
+  }
+  75% {
+    border: solid 1px #9c5d14;
+  }
+  100% {
+    border: solid 1px #9c5d14;
+  }
+}
+@-webkit-keyframes validborder {
+  0% {
+    border: solid 1px #9fe76f;
+  }
+  25% {
+    border: solid 1px #9fe76f;
+  }
+  75% {
+    border: solid 1px #9c5d14;
+  }
+  100% {
+    border: solid 1px #9c5d14;
+  }
+}
+@keyframes validborder {
+  0% {
+    border: solid 1px #9fe76f;
+  }
+  25% {
+    border: solid 1px #9fe76f;
+  }
+  75% {
+    border: solid 1px #9c5d14;
+  }
+  100% {
+    border: solid 1px #9c5d14;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -58,12 +114,8 @@ body {
 
 a {
   text-decoration: underline;
-  color: #9e5400;
+  color: #9c5d14;
   cursor: pointer;
-}
-
-a:visited {
-  color: #946e43;
 }
 
 .div-github {
@@ -129,7 +181,7 @@ legend {
 .div-input {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  gap: 6px;
   justify-content: left;
   width: 50%;
   font-size: 14px;
@@ -162,7 +214,7 @@ input {
   font-family: inherit;
   border: none;
   color: #e2e1de;
-  background-color: #9e5400;
+  background-color: #9c5d14;
   border-radius: 4px;
 }
 
@@ -174,4 +226,44 @@ input {
 
 .p-submit {
   font-size: 18px;
+}
+
+input {
+  padding: 0 8px;
+  background-color: #000000;
+  color: #e2e1de;
+  border: 1px solid #9c5d14;
+  font-family: inherit;
+  font-size: 16px;
+}
+
+input:focus {
+  border: 1px solid #e2e1de;
+  background-color: #3b2c1a;
+}
+
+input:invalid {
+  -webkit-animation-name: invalidborder;
+          animation-name: invalidborder;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  color: #ec513c;
+  box-shadow: none;
+}
+
+input:valid {
+  -webkit-animation-name: validborder;
+          animation-name: validborder;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
+  box-shadow: none;
+}
+
+.span-required {
+  color: #ec513c;
+}
+
+.p-required {
+  margin-top: -90px;
+  margin-bottom: 90px;
 }/*# sourceMappingURL=stylesheet.css.map */

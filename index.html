@@ -46,39 +46,40 @@
 
                 <section class="form-row">    
                     <div class="div-input">
-                        <label for="firstname">FIRST NAME:</label>
-                        <input type="text" name="firstname" id="firstname">
+                        <label for="firstname">FIRST NAME: <span class="span-required">*</span></label>
+                        <input type="text" name="firstname" id="firstname" placeholder="John" maxlength="32" pattern="[A-Za-z ]{1,32}" required>
                     </div>
                     <div class="div-input">
-                        <label for="lastname">LAST NAME:</label>
-                        <input type="text" name="lastname" id="lastname">
-                    </div>
-                </section>
-
-                <section class="form-row">
-                    <div class="div-input">
-                        <label for="email">EMAIL:</label>
-                        <input type="email" name="email" id="email">                        
-                    </div>
-                    <div class="div-input">
-                        <label for="phonenumber">PHONE NUMBER:</label>
-                        <input type="tel" name="phonenumber" id="phonenumber">                        
+                        <label for="lastname">LAST NAME: <span class="span-required">*</span></label>
+                        <input type="text" name="lastname" id="lastname" placeholder="Doe" maxlength="32" pattern="[A-Za-z ]{1,32}" required>
                     </div>
                 </section>
 
                 <section class="form-row">
                     <div class="div-input">
-                        <label for="password">PASSWORD:</label>
-                        <input type="password" name="password" id="password">                        
+                        <label for="email">EMAIL: <span class="span-required">*</span></label>
+                        <input type="email" name="email" id="email" placeholder="johndoe@example.com" required>                        
                     </div>
                     <div class="div-input">
-                        <label for="confirmpassword">CONFIRM PASSWORD:</label>
-                        <input type="password" name="confirmpassword" id="confirmpassword">                        
+                        <label for="phonenumber">PHONE NUMBER: <span class="span-required">*</span></label>
+                        <input type="number" name="phonenumber" id="phonenumber" placeholder="55519999999" required>                        
+                    </div>
+                </section>
+
+                <section class="form-row">
+                    <div class="div-input">
+                        <label for="password">PASSWORD: <span class="span-required">*</span></label>
+                        <input type="password" name="password" id="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Your password must contain at least one upprcase letter, one number and one special symbol." required>                        
+                    </div>
+                    <div class="div-input">
+                        <label for="confirmpassword">CONFIRM PASSWORD: <span class="span-required">*</span></label>
+                        <input type="password" name="confirmpassword" id="confirmpassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,16}$" title="Your password must contain at least one upprcase letter, one number and one special symbol." required>                        
                     </div>
                 </section>
             </fieldset>
 
             <div class="div-submit">
+                <p class="p-submit p-required">All fields with a <span class="span-required">*</span> beside their name are required.</p>
                 <button type="submit" class="form-btn">Create Account</button>
                 <p class="p-submit">Already have an account? <a>Log in</a></p>
             </div>
